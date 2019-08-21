@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'LoginRegisterPage.dart';
+import 'Mapping.dart';
+import 'Authentication.dart';
 
 void main() => runApp(BlogApp());
 
@@ -12,7 +12,7 @@ class BlogApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: LoginRegisterPage(),
+      home: MappingPage(auth: Auth()),
     );
   }
 }
