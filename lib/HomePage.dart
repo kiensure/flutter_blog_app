@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'Authentication.dart';
+import 'UploadPhotoPage.dart';
 
 class HomePage extends StatefulWidget {
-
   HomePage({this.auth, this.onSignedOut});
   final AuthImplementaion auth;
   final VoidCallback onSignedOut;
@@ -12,12 +12,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   void _logoutUser() async {
     try {
       await widget.auth.signOut();
       widget.onSignedOut();
-    } catch(e) {
+    } catch (e) {
       print("Error: $e");
     }
   }
@@ -30,9 +29,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: Text("Home"),
       ),
-      body: Container(
-
-      ),
+      body: Container(),
       bottomNavigationBar: BottomAppBar(
         color: Colors.pink,
         child: Container(
@@ -45,14 +42,17 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.local_car_wash),
                   iconSize: 50,
                   color: Colors.white,
-                  onPressed: _logoutUser
-              ),
+                  onPressed: _logoutUser),
               IconButton(
                   icon: Icon(Icons.add_a_photo),
                   iconSize: 40,
                   color: Colors.white,
-                  onPressed: null
-              )
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return new UploadPhotoPage();
+                    }));
+                  })
             ],
           ),
         ),
