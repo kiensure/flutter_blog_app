@@ -4,7 +4,7 @@ import 'DialogBox.dart';
 
 class LoginRegisterPage extends StatefulWidget {
 
-  final AuthImplementaion auth;
+  final AuthImplementation auth;
   final VoidCallback onSignedIn;
 
   LoginRegisterPage({

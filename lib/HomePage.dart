@@ -4,7 +4,7 @@ import 'UploadPhotoPage.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({this.auth, this.onSignedOut});
-  final AuthImplementaion auth;
+  final AuthImplementation auth;
   final VoidCallback onSignedOut;
 
   @override
